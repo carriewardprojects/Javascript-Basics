@@ -189,3 +189,98 @@ var popped = groceryList.pop()
 if(popped === "eggs"){
     console.log("Wonderful!")
 }
+
+/*  Matrix - arrays that store other arrays!
+    A two-dimensional (2-D) array is called a Matrix
+*/
+var matrix = [[1,1], [2,2]]
+// access the second element in the first row
+var myItem = matrix[0][1]
+console.log(myItem)
+
+// more arrays
+var count = []
+for(var i = 0; i <= 10; i++){
+    count.push(i)
+    console.log(i)
+}
+console.log(count)
+count.pop() // pops out the 10th item
+console.log(count)
+
+var number = count[count.length - 1]    // index of the last item
+// note: count.length = 10
+// note: count.length -1 = 9
+
+// using callback methods in arrays
+var list = ["tea", "coffee", "apples"]
+list.forEach(function(element, item, array){
+    console.log(element)    // should print every element in the array
+})
+
+/*  The .indexOf() method takes an array element as an arguement and
+    checks if that element exists in the array.
+*/
+var List = ["beer", "soda", "peanutbutter"]
+console.log(List.indexOf("soda"))
+/*  note: if a value that is not in the array is passed into the function
+    the program will return a value of -1
+*/
+
+/*  Concatonate two strings into a new string without effecting
+    the original two strings.
+*/
+var yourList = ["tea", "apples"]
+var myList = ["coffee"]
+var theList = yourList.concat(myList)
+console.log(theList)
+
+/*  Mapping can apply a function to each array element using a callback
+    to get a new array.     */
+// create an array that adds one value to each element in the array
+var report = [1, 2, 3]
+var new = report.map(function(item){
+    return item + 1
+})
+console.log("Original Report: " + report)
+console.log("New Report: " + new)
+
+/*  The .reduce() function takes the previousValue and currentValue and adds
+    them both to the rolling sum.
+*/
+var List = [1, 2, 3]
+var sum = List.reduce(function(prior, current){
+    return prior + current  // all items in the array have been added together
+})
+console.log(sum)    // the result should returna value of 6
+
+// The .filter() function allows you to search for only the elements you want
+var List = [1, 2, 3]
+var fil = List.filter(function(num){
+    return num > 1      // only print values greater than one
+})
+console.log(fil)
+/*  By default .sort() orders values as strings in alphabetical and
+    ascending order. Use the .reverse() function to reverse an array.   */
+var List = ["apples", "tea", "coffee"]
+List.sort()
+console.log(List)
+
+// The .splice() function will remove items from the middle of an array
+var List = ["apples", "tea", "coffee"]
+console.log(List)   // print original List
+List.splice(1, 1) // indicate the array index, indicate how many items to remove
+console.log(List)   // the item "apples" should have been removed
+
+// Objects
+var dog = {
+    // properties
+    name: "Sparky",
+    breed: "Greyhound",
+    age: 4
+}
+console.log("Meet " + dog.name)
+console.log("He is " + dog.age + " years old.")
+// change properties after they have been initialized
+dog.name = "Sally"
+console.log("My dog likes to be called " + dog.name)
